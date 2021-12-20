@@ -1,10 +1,15 @@
-name: 'Hello World'
+name: 'Bump version'
 description: 'Greet someone and record the time'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  file:
+    description: 'Version file'
     required: true
-    default: 'World'
+  name:
+    description: 'Project name'
+    required: true
+  version:  # id of input
+    description: 'Project version'
+    required: true
 outputs:
   time: # id of output
     description: 'The time we greeted you'
