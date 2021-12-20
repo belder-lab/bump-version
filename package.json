@@ -1,0 +1,17 @@
+{
+  "name": "fastup-kit-bump-version",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:fastup-kit/bump-version.git",
+  "author": "luchanso <luchansodev@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc && ncc build dist/index.js -o dist"
+  },
+  "dependencies": {
+    "@actions/core": "1.6.0",
+    "@actions/github": "5.0.0",
+    "@vercel/ncc": "0.33.1",
+    "typescript": "4.5.4"
+  }
+}

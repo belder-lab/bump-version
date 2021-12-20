@@ -1,5 +1,13 @@
-const core = require('@actions/core');
-const github = require('@actions/github');
+import core from '@actions/core';
+import github from '@actions/github';
+
+function isJsError(error: unknown): error is Error {
+  if (error instanceof Error) {
+    return true;
+  }
+
+  return false;
+}
 
 try {
   // `who-to-greet` input defined in action metadata file
@@ -11,5 +19,9 @@ try {
   const payload = JSON.stringify(github.context.payload, undefined, 2)
   console.log(`The event payload: ${payload}`);
 } catch (error) {
-  core.setFailed(error.message);
+  if(isJsError(error)) {
+    core.setFailed(error.message);
+  } else {
+    core.setFailed(`${error}`);
+  }
 }
