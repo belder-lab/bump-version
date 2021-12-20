@@ -9,6 +9,7 @@ function isJsError(error: unknown): error is Error {
   return false;
 }
 
+// https://github.community/t/triggering-by-other-repository/16163
 try {
   const nameToGreet = core.getInput("who-to-greet");
   const time = new Date().toTimeString();
