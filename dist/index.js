@@ -8297,12 +8297,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
     __setModuleDefault(result, mod);
     return result;
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 const core = __importStar(__nccwpck_require__(2186));
-const github_1 = __importDefault(__nccwpck_require__(5438));
+const github = __importStar(__nccwpck_require__(5438));
 function isJsError(error) {
     if (error instanceof Error) {
         return true;
@@ -8316,7 +8313,7 @@ try {
     const time = new Date().toTimeString();
     core.setOutput("time", time);
     // Get the JSON webhook payload for the event that triggered the workflow
-    const payload = JSON.stringify(github_1.default.context.payload, undefined, 2);
+    const payload = JSON.stringify(github.context.payload, undefined, 2);
     // console.log(`The event payload: ${payload}`);
 }
 catch (error) {
