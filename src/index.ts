@@ -12,11 +12,10 @@ function isJsError(error: unknown): error is Error {
 // https://github.community/t/triggering-by-other-repository/16163
 try {
   const file = core.getInput("file");
-  const proekctName = core.getInput("name");
+  const projectName = core.getInput("name");
   const version = core.getInput("file");
 
   const payload = JSON.stringify(github.context.payload, undefined, 2);
-
   core.info(payload);
 
 
