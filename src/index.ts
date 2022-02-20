@@ -16,7 +16,9 @@ try {
   const version = core.getInput("file");
 
   const payload = JSON.stringify(github.context.payload, undefined, 2);
-  console.log({ payload });
+
+  core.info(payload);
+
 
   const time = new Date().toTimeString();
   core.setOutput("time", time);
