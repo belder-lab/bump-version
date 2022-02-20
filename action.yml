@@ -7,12 +7,9 @@ inputs:
   name:
     description: 'Project name'
     required: true
-  version:  # id of input
+  version:
     description: 'Project version'
     required: true
-outputs:
-  time: # id of output
-    description: 'The time we greeted you'
 runs:
   using: 'node12'
   main: 'dist/index.js'
